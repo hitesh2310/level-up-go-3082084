@@ -10,12 +10,20 @@ var expectedFormat = "2006-01-02"
 
 // parseTime validates and parses a given date string.
 func parseTime(target string) time.Time {
-	panic("NOT IMPLEMENTED")
+	// panic("NOT IMPLEMENTED")
+	timeInput,err := time.Parse(expectedFormat,target)
+	if err!=nil || timeInput.After(time.Now()) {
+		log.Panic("invalid Input")
+	}
+	return timeInput
 }
 
 // calcSleeps returns the number of sleeps until the target.
 func calcSleeps(target time.Time) float64 {
-	panic("NOT IMPLEMENTED")
+	// panic("NOT IMPLEMENTED")
+	unbtil := time.Until(target)
+
+	return unbtil.Hours() / 24
 }
 
 func main() {
