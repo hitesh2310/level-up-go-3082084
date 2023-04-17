@@ -12,7 +12,7 @@ var expectedFormat = "2006-01-02"
 func parseTime(target string) time.Time {
 	// panic("NOT IMPLEMENTED")
 	timeInput,err := time.Parse(expectedFormat,target)
-	if err!=nil || timeInput.After(time.Now()) {
+	if err!=nil || time.Now().After(timeInput) {
 		log.Panic("invalid Input")
 	}
 	return timeInput
